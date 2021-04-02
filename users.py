@@ -26,7 +26,7 @@ def index():
 def add_user():
     if request.method == 'POST':
         user_list.append(Student(request.form['username'], request.form['mail']))
-        return f"<h1>Successfully added {request.form['username']} </h1> \n <p>E-mail: {request.form['mail']}</p> </p>"
+        return f"<h1>Successfully added <span style='text-decoration: underline;'>{request.form['username']}</span> </h1> \n <p>E-mail: {request.form['mail']}</p>"
     else:
         return render_template("add_user.html")
 
