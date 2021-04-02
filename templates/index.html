@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flask app</title>
+</head>
+<body>
+	<h1> Full user list</h1>
+	{% if form_list == [] %}
+	<p>User list is empty, please enter some users!</p>
+	{% endif %}
+    <ul>
+      {% for student in form_list %}
+	    <br>
+	    <li><strong>{{student[0]}} </strong><br>E-mail: {{student[1]}} </li>
+      {% endfor %}
+    </ul>
+	<a href=" {{url_for('add_user')}}">add new user</a>
+</body>
+</html>
